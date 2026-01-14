@@ -1,9 +1,12 @@
-Introduction
+# Nmap & Scapy Lab Documentation
+
+## 1. Introduction
+
 This project documents my hands-on lab exercises using Nmap and Scapy Lab for network scanning, service enumeration, host discovery, OS Fingerprinting, Port Scanning and packet sniffing. The activities were performed in a controlled internal network using the target IP: 10.6.6.23.
 
 These exercises strengthen foundational skills used in ethical hacking, penetration testing, and network security analysis.
 
-Lab Environment
+## 2. Lab Environment
 Visual Machine: Kali Linux (Ethical Hacker Kali)
 
 Tools Used:
@@ -18,7 +21,7 @@ Target Machine: 10.6.6.23
 
 Network Range: 10.6.6.0/24
 
-🔍 3. Nmap Practical Exercises
+## 🔍3. Nmap Practical Exercises
 
 3.1 Host Discovery (Ping Sweep)
 
@@ -74,13 +77,13 @@ Exit SMB client:
 
 exit
 
-🔬 4. Scapy Practical Exercises
+## 🔬 4. Scapy Practical Exercises
 
 All commands were executed within the Scapy interactive shell.
 
 4.1 Launch Scapy
 
-sCommand:
+Command:
 
 udo su
 
@@ -142,7 +145,7 @@ paro3.summary()
 
 paro3[3]
 
-🧠 5. Key Takeaways
+## 🧠 5. Key Takeaways
 
 Nmap reveals live hosts, services, versions, and OS fingerprints.
 
@@ -154,7 +157,7 @@ Filters and interface selection improve the precision of packet captures.
 
 Hands-on tests reinforced practical penetration testing techniques.
 
-🏁 6. Conclusion
+## 🏁 6. Conclusion
 
 This lab improved my practical understanding of reconnaissance using Nmap and packet inspection using Scapy.
 Working with real network traffic and exploring the target 10.6.6.23 helped strengthen my penetration testing and network analysis skills.
