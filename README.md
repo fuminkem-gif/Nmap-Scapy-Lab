@@ -17,133 +17,160 @@ Tools Used:
 
 . Wireshark
 
-Target Machine: 10.6.6.23
+Target Machine: `10.6.6.23`
 
-Network Range: 10.6.6.0/24
+Network Range: `10.6.6.0/24`
+
 
 ## 🔍3. Nmap Practical Exercises
 
-3.1 Host Discovery (Ping Sweep)
+## 3.1 Host Discovery (Ping Sweep)
 
 Command:
 
+```bash
 nmap -sn 10.6.6.0/24
+```
 
 Purpose: Identify active hosts in the network.
 
 Result: Host 10.6.6.23 was detected as host is up
 
-3.2 Operating System Detection
+## 3.2 Operating System Detection
 
 Command:
 
+```bash
 sudo nmap -o 10.6.6.23
+```
 
 Purpose: Determine the target’s operating system using TCP/IP fingerprinting.
 
 Outcome: Nmap generated an OS guess based on response patterns.
 
-3.3 FTP Service & Version Detection
+## 3.3 FTP Service & Version Detection
 
 Command:
 
+```bash
 nmap -p21 -sV -A -T24 10.6.6.23
+```
 
 Purpose: Perform service detection, version enumeration, and additional OS fingerprinting.
 
 Result: FTP service discovered on port 21, including version details.
 
-3.4 SMB Share Enumeration
+## 3.4 SMB Share Enumeration
 
 Command:
 
+```bash
 nmap --script smb-enum-shares.nse -p445 10.6.6.23
+```
 
 Purpose: Identify accessible SMB shares and check for misconfigurations.
 
 Outcome: Lists of SMB shares were retrieved successfully.
 
-3.5 Testing SMB Anonymous Login
+## 3.5 Testing SMB Anonymous Login
 
 Command:
 
+```bash
 smbclient //10.6.6.23/print$ -N
+```
 
 Purpose: Test whether SMB allows anonymous authentication.
 
 Result: Anonymous access was allowed — a potential security weakness.
 
-Exit SMB client:
-
-exit
+Exit SMB client: Type `exit`
 
 ## 🔬 4. Scapy Practical Exercises
 
 All commands were executed within the Scapy interactive shell.
 
-4.1 Launch Scapy
+## 4.1 Launch Scapy
 
 Command:
 
+```bash
 udo su
 
 scapy
+```
 
-4.2 Sniffing All Network Traffic
+## 4.2 Sniffing All Network Traffic
 
 Command:
 
+```bash
 sniff()
+```
 
 Purpose: Captures live packets on the default interfaces.
 
 Test Traffic: Open a second terminal and run:
 
+```bash
 ping google.com
+```
 
 Store results: Scapy captured TCP, UDP, ICMP and others.
 
+```bash
 paro = _ paro.summary()
+```
 
-4.3 Sniffing on a Specific Interface
+## 4.3 Sniffing on a Specific Interface
 
 Command:
 
+```bash
 sniff(iface="br-internal")
+```
 
 Purpose: Captures traffic on the internal bride network.
 
 Triggered traffic:
 
-. Visited http://10.6.6.23 in a browser
+Visitied: `http://10.6.6.23`
 
 . Performed additional pings
 
 Store results:
 
+```bash
 paro2 = _
 
 paro2.summary()
+```
 
-4.4 Filtering ICMP Packets
+## 4.4 Filtering ICMP Packets
 
 Command:
 
+```bash
 sniff(iface="br-internal", filter="icmp", count=5)
+```
 
 Test Traffic:
 
+```bash
 ping 10.6.6.23
+```
 
 Captures 5 ICMP packets
 
 Stored and inspect packets:
 
+```bash
 paro3 = _
 
 paro3.summary()
 
 paro3[3]
+```
 
 ## 🧠 5. Key Takeaways
 
