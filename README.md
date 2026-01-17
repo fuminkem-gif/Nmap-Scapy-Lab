@@ -82,7 +82,7 @@ smbclient //10.6.6.23/print$ -N
 
 Purpose: Test whether SMB allows anonymous authentication.
 
-Result: Anonymous access was allowed — a potential security weakness.
+Result: Anonymous access was allowed, a potential security weakness.
 
 Exit SMB client: Type `exit`
 
